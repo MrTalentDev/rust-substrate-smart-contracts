@@ -11,6 +11,7 @@ test_common = { path = "../../test_common" }
 subxt = { git = "https://github.com/paritytech/subxt.git", rev = "a701d80" }
 sp-keyring = { package = "sp-keyring", git = "https://github.com/paritytech/substrate/", branch = "master" }
 tokio = { version = "1.14.0", features = ["full"] }
+log = "0.4.14"
 env_logger = "0.9.0"
 hex = "0.4.3"
 assert_matches = "1.5.0"
@@ -21,6 +22,10 @@ test-context = "0.1.3"
 async-trait = "0.1.51"
 futures = "0.3.18"
 anyhow = "1.0.48"
+pallet-contracts-primitives = { package = "pallet-contracts-primitives", git = "https://github.com/paritytech/substrate/", branch = "master" }
+sp-rpc = { package = "sp-rpc", git = "https://github.com/paritytech/substrate/", branch = "master" }
+serde = "1.0.130"
+jsonrpsee-types = "0.4.1"
 
 [features]
 default = ["std"]

@@ -2,6 +2,7 @@ use crate::test_client_context::TestClientContext;
 use crate::test_node_context::TestNodeContext;
 use api_metadata::api::{DefaultConfig, RuntimeApi};
 use std::{thread, time};
+use subxt::rpc::Rpc;
 use test_context::AsyncTestContext;
 
 const RECONNECT_WAIT_TIME: time::Duration = time::Duration::from_secs(1);
@@ -44,5 +45,9 @@ impl AsyncTestContext for TestBaseContext {
 impl TestBaseContext {
     pub fn api(&self) -> RuntimeApi<DefaultConfig> {
         self.test_client_context.client().clone().to_runtime_api()
+    }
+
+    pub fn rpc(&self) -> &Rpc<DefaultConfig> {
+        self.test_client_context.client().rpc()
     }
 }
