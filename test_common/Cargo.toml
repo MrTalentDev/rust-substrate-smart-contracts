@@ -13,3 +13,12 @@ async-trait = "0.1.51"
 futures = "0.3.18"
 portpicker = "0.1.1"
 anyhow = "1.0.48"
+ink_env = "3.0.0-rc6"
+jsonrpsee-types = "0.4.1"
+log = "0.4.14"
+pallet-contracts-primitives = { package = "pallet-contracts-primitives", git = "https://github.com/paritytech/substrate/", branch = "master" }
+parity-scale-codec = "2.3.1"
+rand = "0.8.4"
+serde = "1.0.130"
+sp-keyring = { package = "sp-keyring", git = "https://github.com/paritytech/substrate/", branch = "master" }
+sp-rpc = { package = "sp-rpc", git = "https://github.com/paritytech/substrate/", branch = "master" }

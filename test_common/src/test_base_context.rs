@@ -6,6 +6,7 @@ use subxt::rpc::Rpc;
 use test_context::AsyncTestContext;
 
 const RECONNECT_WAIT_TIME: time::Duration = time::Duration::from_secs(1);
+const MAX_RECONNECTS: u32 = 10;
 
 pub struct TestBaseContext {
     _test_node_context: TestNodeContext,
@@ -26,7 +27,7 @@ impl AsyncTestContext for TestBaseContext {
             match result {
                 Ok(client) => break client,
                 Err(_) => {
-                    if counter < 11 {
+                    if counter < MAX_RECONNECTS {
                         counter += 1;
                         continue;
                     }
